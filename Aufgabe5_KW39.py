@@ -17,12 +17,15 @@ Schreibe ein Programm, das die Blutalkoholkonzentration mit der Widmark-Formel
 berechnet. Die Eingabegrößen sollen dabei flexibel einstellbar sein.
 """
 
+# Eingabeaufforderung für das Volumen sowie Alkoholvolumenanteil des Getränks, Gewicht der Person und Geschlecht/Kind
 v = float(input("Wie viel milliliter Alkohol wurde getrunken: "))
 e = float(input("Wie viel Prozent Alkohol hatte das Getränk: "))
 m = float(input("Wie schwer ist die Person: "))
 r_angabe = input(
     "Ist die Person Männlich, Weiblich oder ein Kind (bitte klein angeben): "
 )
+
+# Zuweisung des richtigen Verteilunsfaktor r durch eine if-Abfrage
 if r_angabe == "männlich":
     r = 0.7
 elif r_angabe == "weiblich":
@@ -30,10 +33,13 @@ elif r_angabe == "weiblich":
 elif r_angabe == "kind":
     r = 0.8
 else:
+    # Sollte eine falsche Angabe zum Geschlecht/Kind gemacht worden sein wird das Programm nach einer Info Ausgabe beendet
     print(
         "Bitte geben Sie beim nächsten mal einen richtigen Personen Wert an. Das Programm beendet sich nun."
     )
     exit()
+
+# Umrechung auf die Aufgenommne Masse des Alkohols und Ausrechnen der Alkoholkonzentration
 p = 0.8
 a = v * (e / 100) * p
 c = a / (m * r)
