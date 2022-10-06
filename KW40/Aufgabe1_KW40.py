@@ -32,6 +32,4 @@ steuerbetrag = bruttogehalt * zinssatz
 nettogehalt = bruttogehalt - steuerbetrag
 
 # Ausgabe des monatlichen Nettobetrags und Steuerbetrags
-print(
-    "Ihr Nettogehalt beträgt", nettogehalt, "€ und der Steuerbetrag", steuerbetrag, "€"
-)
+print(f"Ihr Nettogehalt beträgt {nettogehalt}€ und der Steuerbetrag {steuerbetrag}€.")
