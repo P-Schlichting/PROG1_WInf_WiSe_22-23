@@ -19,17 +19,20 @@ Ich musste hierzu 5 Iterationen durchführen
 Python behauptet die Wurzel von 2.0 sei 1.4142135623730951.
 """
 
-
+# Funktion zur Berechnung der Wurzel mit hilfe des Newton-Verfahren
 def berechnung(x):
+    count = 0
+
     delta = 0.0000001
-    z_org = 1
-    repeat = True
-    while repeat:
-        z_new = z_org - (z_org**2 - x) / 2 * z_org
+    z_org = x
+    while 1:
+        count += 1
+        # z_new = z_org - (z_org**2 - x) / 2 * z_org
+        # Andere Formel
+        z_new = 0.5 * (z_org + (x / z_org))
         if abs(z_new - z_org) < delta:
-            repeat = False
-        else:
-            z_org = z_new
+            break
+        z_org = z_new
 
     return z_new
 
